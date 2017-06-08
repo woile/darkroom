@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Apply automatically national geographic effect
+#gimp -i -b '(elsamuko-national-geographic-batch "*.jpg" 60 1 60 25 0.4 1 0)' -b '(gimp-quit 0)'
+
+gimp-console -n -i -b "(elsamuko-national-geographic-fixed-batch \"$@\" 60 1 60 25 0.9 1 0)" -b '(gimp-quit 0)'

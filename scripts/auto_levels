@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Auto White Balance / Contrast Stretch / HSV Stretch
+gimp -i -b "(batch-auto-levels \"$@\")" -b '(gimp-quit 0)'

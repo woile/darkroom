@@ -1,0 +1,31 @@
+#!/bin/bash
+
+error() {
+    printf '\E[31m'; echo "$@"; printf '\E[0m'
+}
+
+success() {
+    printf '\e[1;32m'; echo "$@"; printf '\033[00m'
+}
+
+if [ -d ~/bin ]; then
+    echo "Creating symbolic link to darkroom in ~/bin"
+    ln -sf "$(pwd)/darkroom.py" ~/bin/darkroom
+
+else
+    if [[ $EUID -ne 0 ]]; then
+        error "This script should be run using sudo or as the root user"
+        exit 1
+    fi
+
+    echo "Creating symbolic link to darkroom in /usr/local/bin"
+    sudo ln -sf "$(pwd)/darkroom.py" /usr/local/bin/darkroom
+fi
+
+echo 'Installing gimp scripts...'
+for gimp_scripts in gimp_scripts/*.scm
+do
+    ln -sf "$(pwd)/$gimp_scripts" ~/.gimp-2.8/scripts
+done
+
+success "Installation was succesful"

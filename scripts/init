@@ -1,0 +1,11 @@
+#!/bin/bash
+echo -e '\e[1;32mCreating folders...\033[00m'
+mkdir -v finals raw_backup
+
+echo -e '\e[1;32mLower casing files to avoid repeating upper case extensions\033[00m'
+rename 'y/A-Z/a-z/' *
+
+echo -e '\e[1;Creating backup of raw photos\033[00m'
+cp -iv -- *.{png,jpg,jpeg} raw_backup/
+
+echo -e '\e[1;32mDone!\033[00m'

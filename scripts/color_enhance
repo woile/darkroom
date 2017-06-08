@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Enhance color, not every photo will be ok, so pick those properly enhanced
+gimp -i -b "(woile-color-enhance \"$@\")" -b '(gimp-quit 0)'
