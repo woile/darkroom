@@ -40,8 +40,9 @@ gimp receives the images.
 
 | command | example |
 |---------|:---------:|
-| `darkroom auto_levels "*.JPG"` | ![gopr3768.jpg](./docs/gopr3768.jpg) |
-| `darkroom auto_levels "*.jpg darkroom color_enhance "*_al.JPG"` | ![gopr3768.jpg](./docs/gopr3768_al.jpg) |
+| original | ![gopr3768.jpg](./docs/gopr3768.jpg) |
+| `darkroom auto_levels "*.JPG"` | ![gopr3768.jpg](./docs/gopr3768_al.jpg) |
+| `darkroom auto_levels "*.jpg darkroom color_enhance "*_al.JPG"` | ![gopr3768.jpg](./docs/gopr3768_al_ce.jpg) |
 | `darkroom auto_levels "*.jpg" && darkroom natgeo "*_al.JPG"` | ![gopr3768_al_ng.jpg](./docs/gopr3768_al_ng.jpg) |
 | `darkroom auto_levels "*.jpg" && darkroom color_enhance "*_al.jpg" && darkroom natgeo "*_al_ce*.jpg"` | ![gopr3768_al_ce_ng.jpg](./docs/gopr3768_al_ce_ng.jpg) |
 
